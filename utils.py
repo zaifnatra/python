@@ -6,6 +6,8 @@ def get_option():
         print("Invalid input. Please enter a number.")
         return get_option()
 
+### not sure if thsi is right place for this function, but it is used in main.py
+### check out how to work for main after
 def get_filename():
     filename = input("Enter the filename: ").strip()
     if not filename:
