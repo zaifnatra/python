@@ -15,3 +15,39 @@ def get_filename():
         return get_filename()
     return filename
 
+### test
+from hockey import HockeyPlayer
+from swimmer import Swimmer
+from ball import BasketballPlayer, FootballPlayer
+
+def load_file(filename):
+    athletes = []
+
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                line = line.strip()
+                if not line or ":" not in line:
+                    continue
+
+                athlete_type, data = line.split(":", 1)
+                athlete_type = athlete_type.strip()
+                data = data.strip()
+
+                if athlete_type == "HockeyPlayer":
+                    athlete = HockeyPlayer.parse(data)
+                elif athlete_type == "Swimmer":
+                    athlete = Swimmer.parse(data)
+                elif athlete_type == "BasketballPlayer":
+                    athlete = BasketballPlayer.parse(data)
+                elif athlete_type == "FootballPlayer":
+                    athlete = FootballPlayer.parse(data)
+                else:
+                    continue 
+
+                athletes.append(athlete)
+
+    except:
+        print("Something went wrong while reading the file.")
+
+    return athletes
