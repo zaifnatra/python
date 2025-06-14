@@ -1,4 +1,5 @@
 from utils import get_option
+from utils import get_filename, load_file
 
 def menu():
     print("1. Load File")
@@ -14,7 +15,8 @@ option = get_option()
 
 while option != 7:
     if option == 1:
-        pass
+        filename = get_filename()
+        athletes = load_file(filename)
     elif option == 2:
         pass
     elif option == 3:

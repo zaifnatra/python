@@ -47,7 +47,9 @@ def load_file(filename):
 
                 athletes.append(athlete)
 
-    except:
+    except Exception as e:
         print("Something went wrong while reading the file.")
+        print("Error:", e)  # <--- temporary for debugging
+
 
     return athletes
