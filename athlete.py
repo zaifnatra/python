@@ -5,7 +5,7 @@ class Athlete:
         self.name = str(name)
         self.age = int(age)
         self.country = str(country)
-        self.salary = float(salary)
+        self.salary = float(salary) if salary else 0.0
 
         Athlete.total_athletes += 1
         print(f"Athlete '{self.name}', {self.age} created; total # of athletes {Athlete.total_athletes}.")

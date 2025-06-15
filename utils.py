@@ -24,7 +24,7 @@ def load_file(filename):
     athletes = []
 
     try:
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding="utf-8") as file:
             for line in file:
                 line = line.strip()
                 if not line or ":" not in line:
